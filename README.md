@@ -65,26 +65,24 @@ Africa Travel Line is a **three-tier architecture** consisting of:
 ```
 africa-travel-line/
 │
-├── frontend/                    # Frontend Web Application
+├── frontend(Africa-Travel-line)/                    # Frontend Web Application
 │   ├── public/                 # Static assets (images, icons)
 │   ├── src/
 │   │   ├── components/         # React components
-│   │   ├── pages/             # Next.js pages/routes
+│   │   ├── pages/             # React Typescript pages/routes
 │   │   ├── styles/            # CSS/styling files
-│   │   ├── utils/             # Helper functions
-│   │   └── services/          # API integration services
+│   │   ├── type/              # Auth Interface
+|   |── index.html
 │   ├── package.json           # Frontend dependencies
 │   └── README.md              # Frontend-specific docs
 │
-├── backend/                     # Backend API Server
-│   ├── server/                # Server configuration
+├── backend(server)/           # Backend API Server
 │   ├── src/
 │   │   ├── routes/            # API route handlers
-│   │   ├── controllers/       # Business logic controllers
-│   │   ├── models/            # Data models/schemas
-│   │   ├── middleware/        # Express middleware
-│   │   └── services/          # External service integrations
-│   ├── tests/                 # Backend unit tests
+│   │   ├── config/            # Configuring database
+│   │
+|   |── app.js
+|   |── index.js               # Root node app
 │   ├── package.json           # Backend dependencies
 │   └── README.md              # Backend-specific docs
 │
@@ -95,7 +93,7 @@ africa-travel-line/
 │   ├── models.py              # Data models for agent
 │   ├── utils.py               # Helper functions
 │   ├── requirements.txt       # Python dependencies
-│   ├── .env.example           # Environment variables template
+│   ├── .env                   # Environment variables template
 │   └── README.md              # Agent-specific docs
 │
 ├── .gitignore                  # Git ignore rules
@@ -109,7 +107,7 @@ africa-travel-line/
 
 ### Agent Information
 
-- **Agent Name:** Travel FAQ Assistant (MeTTa Enhanced)
+- **Agent Name:** Travel Assistant (MeTTa Enhanced)
 - **Agent Address:** `agent1qwatl9nznqul3nldvh59lu7ph53fpm4r3y4t5t9ku352d3ur7lkscgzp6vy`
 - **Wallet Address:** `fetch1f4k3akwuexxwhtuj3fdne7jwesatzagy8vhf6r`
 - **Network:** Testnet
@@ -585,7 +583,7 @@ async def on_chat(ctx: Context, sender: str, msg: ChatMessage):
 
 ```bash
 # Agent Identity
-AGENT_NAME=travel_faq_assistant
+AGENT_NAME=travel_assistant
 AGENT_SEED=<your-unique-seed>
 PORT=8001
 
@@ -1183,10 +1181,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Contributors
 
-- **Project Lead:** [Your Name]
-- **Frontend Development:** [Team Members]
-- **Backend Development:** [Team Members]
-- **AI Agent Development:** [Team Members]
+- **Project Lead:** [HOSEA]
+- **Team Developer:** [JOSHUA]
 
 ---
 
@@ -1201,13 +1197,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-- **Website:** https://africatravelline.com
-- **Email:** info@africatravelline.com
-- **GitHub:** https://github.com/yourusername/africa-travel-line
-- **Twitter:** @AfricaTravelLine
+- **Website:**---
+- **Email:** izuchukwunwali09@gmail.com
+- **GitHub:** https://https://github.com/jungleking624-cyber/Africa-Travel-Line
+- **Twitter:** @---
 
 ---
 
 **Built with ❤️ for travelers exploring Africa**
 
-_Last Updated: January 2025_
+_Last Updated: October 2025_
