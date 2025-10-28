@@ -295,10 +295,6 @@ from uagents import Agent
 from uagents_core.contrib.protocols.chat import ChatMessage, TextContent
 from datetime import datetime, timezone
 from uuid import uuid4
-```
-
-**Option 4: Test Agents with ASI:One:**
-![asi one](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/asi1%20llm.png)
 
 # Send message to travel agent
 
@@ -310,6 +306,12 @@ msg_id=uuid4(),
 content=[TextContent(type="text", text="What vaccinations do I need for Tanzania?")]
 )
 )
+```
+
+**Option 4: Test Agents with ASI:One:**
+![asi one](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/asi1%20llm.png)
+
+
 
 ---
 
