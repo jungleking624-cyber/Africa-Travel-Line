@@ -624,8 +624,8 @@ python backend_agent.py
 1. Go to https://agentverse.ai
 2. Search the agent address "agent1qwatl9nznqul3nldvh59lu7ph53fpm4r3y4t5t9ku352d3ur7lkscgzp6vy" ot travel assistant
 3. Click the agent
-3. Click "Chat with Agent"
-4. Send test messages:
+4. Click "Chat with Agent"
+5. Send test messages:
    - "What do I need for Egypt?"
    - "Best time to visit South Africa?"
    - "Vaccinations for Tanzania?"
@@ -814,130 +814,12 @@ pytest -v                 # Verbose output
 
 ---
 
-## 🚀 Deployment
-
-### Frontend Deployment (Vercel)
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-cd frontend
-vercel
-
-# Production deployment
-vercel --prod
-```
-
-**Environment Variables:**
-Set in Vercel dashboard:
-
-- `NEXT_PUBLIC_API_URL`
-- `NEXT_PUBLIC_AGENT_ADDRESS`
-
-### Backend Deployment (Railway/Heroku)
-
-**Railway:**
-
-```bash
-# Install Railway CLI
-npm i -g @railway/cli
-
-# Login and deploy
-railway login
-cd backend
-railway up
-```
-
-**Heroku:**
-
-```bash
-# Create Heroku app
-heroku create africa-travel-api
-
-# Deploy
-git subtree push --prefix backend heroku main
-
-# Set environment variables
-heroku config:set DATABASE_URL=mongodb://...
-heroku config:set JWT_SECRET=...
-```
-
-### Agent Deployment (Agentverse)
-
-**Option 1: Agentverse Hosted**
-
-1. Go to Agentverse dashboard
-2. Create new agent
-3. Upload agent code
-4. Set environment secrets (ASI1_API_KEY, METTA_API_KEY)
-5. Start agent
-
-**Option 2: Local/Server Deployment**
-
-```bash
-# Using PM2
-pm2 start agent.py --name travel-agent --interpreter python3
-
-# Or systemd service
-sudo systemctl start travel-agent.service
-```
-
-### Database Setup
-
-**MongoDB Atlas:**
-
-1. Create cluster at mongodb.com
-2. Configure network access
-3. Create database user
-4. Get connection string
-5. Update `DATABASE_URL` in backend `.env`
-
-### CI/CD Pipeline
-
-**GitHub Actions** (`.github/workflows/deploy.yml`):
-
-```yaml
-name: Deploy
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  deploy-frontend:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Deploy to Vercel
-        run: vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
-
-  deploy-backend:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Deploy to Railway
-        run: railway up
-
-  deploy-agent:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Deploy to Agentverse
-        run: |
-          # Upload agent code to Agentverse
-          # (Implementation depends on Agentverse API)
-```
-
----
-
 ## 🎨 Tech Stack Summary
 
 ### Frontend
 
-- **Framework:** Next.js 14
-- **Language:** TypeScript
+- **Framework:** Typescript react
+- **Language:** Javascript
 - **Styling:** Tailwind CSS
 - **State:** React Context API
 - **HTTP:** Axios
@@ -949,7 +831,7 @@ jobs:
 - **Runtime:** Node.js
 - **Framework:** Express.js
 - **Language:** TypeScript/JavaScript
-- **Database:** MongoDB + Mongoose
+- **Database:** PostgreSQL
 - **Auth:** JWT, bcrypt
 - **Validation:** Joi
 - **Testing:** Jest, Supertest
@@ -989,7 +871,6 @@ npm run build
 
 **API connection errors:**
 
-- Check `NEXT_PUBLIC_API_URL` in `.env.local`
 - Verify backend is running
 - Check CORS configuration on backend
 
@@ -998,8 +879,7 @@ npm run build
 **Database connection fails:**
 
 - Verify `DATABASE_URL` is correct
-- Check MongoDB Atlas network access
-- Ensure database user has permissions
+- Have a pgAdmin and all unique credentials
 
 **Port already in use:**
 
@@ -1027,7 +907,7 @@ lsof -ti:3001 | xargs kill -9
 **MeTTa not working:**
 
 - Optional feature, agent works without it
-- Check `METTA_API_KEY` if you have one
+- You don't need to check `METTA_API_KEY` because it is not available currently
 - Logs will show if MeTTa queries succeed
 
 **Common Error Messages:**
@@ -1085,14 +965,12 @@ chore: Update dependencies
 - **SingularityNet MeTTa:** https://metta-lang.dev
 - **Next.js:** https://nextjs.org/docs
 - **Express.js:** https://expressjs.com
-- **MongoDB:** https://docs.mongodb.com
 
 ### Community & Support
 
 - **GitHub Issues:** Report bugs and request features
 - **Discord:** Join our community server
 - **Fetch.ai Discord:** https://discord.gg/fetchai
-- **Email:** support@africatravelline.com
 
 ---
 
@@ -1107,7 +985,7 @@ chore: Update dependencies
 ✅ Suggests packing lists and practical travel tips
 ✅ Shares cultural customs and etiquette guidance
 
-### What the Platform Does NOT Do
+### What the Platform Does NOT Do (Because of Time contraints)
 
 ❌ **Not a Booking Platform** - Does not handle flight/hotel reservations
 ❌ **Not Real-Time Updates** - Travel information may not reflect daily changes
@@ -1115,7 +993,7 @@ chore: Update dependencies
 ❌ **Not Medical Advice** - Consult healthcare professionals for health needs
 ❌ **Not Travel Insurance** - Recommends but doesn't provide insurance
 ❌ **Not Emergency Services** - Contact local authorities for emergencies
-❌ **Limited Geographic Scope** - Focuses on African destinations only
+❌ **Limited Geographic Scope** - Focuses on African destinations only (But the agent has no Geographical limitation)
 ❌ **No Payment Processing** - No financial transactions handled
 
 ### Important Disclaimers
@@ -1136,7 +1014,7 @@ chore: Update dependencies
 
 **Domain:** Travel, Tourism, Africa, AI Assistant, Trip Planning
 
-**Technologies:** Next.js, Express.js, Python, Fetch.ai, uAgents, AI Agents, LLM, Knowledge Graph
+**Technologies:** Node.js, Express.js, Python, Fetch.ai, uAgents, AI Agents, LLM, Knowledge Graph
 
 **Features:** Destination Discovery, Travel Advice, Visa Information, Packing Lists, Cultural Etiquette, Health Requirements
 
@@ -1179,6 +1057,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Built with ❤️ for travelers exploring Africa**
+**Built with ❤️ for ASI Agents Track hackathon**
 
 _Last Updated: October 2025_
