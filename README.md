@@ -945,8 +945,9 @@ lsof -ti:3001 | xargs kill -9
 
 ## 📚 Additional Resources
 
-### Documentation Links
+### Quick Links
 
+- **Chat with Agent**: [https://agentverse.ai/agents/agent1qwatl9nznqul3nldvh59lu7ph53fpm4r3y4t5t9ku352d3ur7lkscgzp6vy]
 - **Fetch.ai uAgents:** https://fetch.ai/docs
 - **Agentverse Platform:** https://agentverse.ai/docs
 - **ASI1 API:** https://asi1.ai/docs
