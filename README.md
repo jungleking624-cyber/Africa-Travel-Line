@@ -1,4 +1,4 @@
-# Africa-Travel-Line
+# Africa-Travel-Line - Fetch.ai Hackathon
 
 ![tag:innovationlab](https://img.shields.io/badge/innovationlab-3D8BD3)
 ![tag:hackathon](https://img.shields.io/badge/hackathon-5F43F1)
@@ -274,7 +274,7 @@ The AI Travel Agent can help with:
 **Option 1: Via Agentverse Chat**
 
 1. Go to [Agentverse Chat](https://agentverse.ai)
-2. Enter agent address: `agent1qwatl9nznqul3nldvh59lu7ph53fpm4r3y4t5t9ku352d3ur7lkscgzp6vy` or search travel-ai
+2. Enter agent address: `agent1qwatl9nznqul3nldvh59lu7ph53fpm4r3y4t5t9ku352d3ur7lkscgzp6vy` or search "travel-ai"
 3. Navigate to "Chat with Agent"
 4. Start asking your travel questions!
 
@@ -290,17 +290,23 @@ from uagents import Agent
 from uagents_core.contrib.protocols.chat import ChatMessage, TextContent
 from datetime import datetime, timezone
 from uuid import uuid4
+```
+
+**Option 4: Test Agents with ASI:One:**
+![alt text](http://url/to/img.png)
 
 # Send message to travel agent
+
 await ctx.send(
-    "agent1qwatl9nznqul3nldvh59lu7ph53fpm4r3y4t5t9ku352d3ur7lkscgzp6vy",
-    ChatMessage(
-        timestamp=datetime.now(timezone.utc),
-        msg_id=uuid4(),
-        content=[TextContent(type="text", text="What vaccinations do I need for Tanzania?")]
-    )
+"agent1qwatl9nznqul3nldvh59lu7ph53fpm4r3y4t5t9ku352d3ur7lkscgzp6vy",
+ChatMessage(
+timestamp=datetime.now(timezone.utc),
+msg_id=uuid4(),
+content=[TextContent(type="text", text="What vaccinations do I need for Tanzania?")]
 )
-```
+)
+
+````
 
 ---
 
@@ -321,7 +327,7 @@ Each component requires specific environment variables. Copy the example files a
 ```bash
 PUBLIC_API_URL=http://localhost:5173/
 PUBLIC_AGENT_ADDRESS=agent1qwatl9nznqul3nldvh59lu7ph53fpm4r3y4t5t9ku352d3ur7lkscgzp6vy
-```
+````
 
 **Backend** (`backend/.env`):
 
