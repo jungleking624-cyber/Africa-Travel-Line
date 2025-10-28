@@ -277,6 +277,11 @@ The AI Travel Agent can help with:
 2. Enter agent address: `agent1qwatl9nznqul3nldvh59lu7ph53fpm4r3y4t5t9ku352d3ur7lkscgzp6vy` or search "travel-ai"
 3. Navigate to "Chat with Agent"
 4. Start asking your travel questions!
+   ![av travel agent](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/av1.png)
+
+![av travel agent2](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/av2.png)
+
+![av travel agent3](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/av3.png)
 
 **Option 2: Via Africa Travel Line Platform**
 
@@ -293,7 +298,7 @@ from uuid import uuid4
 ```
 
 **Option 4: Test Agents with ASI:One:**
-![alt text](http://url/to/img.png)
+![asi one](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/asi1%20llm.png)
 
 # Send message to travel agent
 
@@ -305,8 +310,6 @@ msg_id=uuid4(),
 content=[TextContent(type="text", text="What vaccinations do I need for Tanzania?")]
 )
 )
-
-````
 
 ---
 
@@ -327,7 +330,7 @@ Each component requires specific environment variables. Copy the example files a
 ```bash
 PUBLIC_API_URL=http://localhost:5173/
 PUBLIC_AGENT_ADDRESS=agent1qwatl9nznqul3nldvh59lu7ph53fpm4r3y4t5t9ku352d3ur7lkscgzp6vy
-````
+```
 
 **Backend** (`backend/.env`):
 
@@ -444,8 +447,6 @@ npm run test         # Run tests
 
 ### API Endpoints
 
-```
-
 #### Users & Authentication
 
 ```
@@ -466,6 +467,7 @@ GET /api/health # Check health endpoint
 GET /api/agent-info # Get agent information
 GET /api/sessions/<session_id> # Get session history
 POST /api/chat/session # Start chat session
+```
 
 ### Middleware
 
@@ -926,28 +928,6 @@ lsof -ti:3001 | xargs kill -9
 | "Module not found"       | Run `pip install -r requirements.txt`     |
 
 ---
-
-## 🔬 Development Workflow
-
-### Branch Strategy
-
-- `main` - Production-ready code
-- `develop` - Integration branch for features
-- `feature/*` - Individual features
-- `bugfix/*` - Bug fixes
-- `hotfix/*` - Urgent production fixes
-
-### Commit Convention
-
-```
-feat: Add destination search filter
-fix: Resolve chat connection timeout
-docs: Update API documentation
-style: Format code with prettier
-refactor: Optimize database queries
-test: Add integration tests for auth
-chore: Update dependencies
-```
 
 ### Code Review Checklist
 
