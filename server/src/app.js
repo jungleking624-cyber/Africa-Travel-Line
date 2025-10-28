@@ -50,18 +50,6 @@ const AGENTVERSE_API_KEY = process.env.AGENTVERSE_API_KEY;
 // Session storage (use Redis in production)
 const sessions = new Map();
 
-// Add this route
-app.get("/api/quicktest", (req, res) => {
-  res.json({
-    message: "Backend is working!",
-    timestamp: new Date().toISOString(),
-  });
-});
-
-// Health check
-// app.get("/api/health", (req, res) => {
-//   res.json({ status: "OK", timestamp: new Date().toISOString() });
-// });
 // Health check endpoint
 app.get("/api/health", (req, res) => {
   res.json({
@@ -234,83 +222,5 @@ app.post("/api/chat/session", async (req, res) => {
     });
   }
 });
-
-//Registering user routes
-// app.post("/register", async (req, res) => {
-//   const { email, password } = req.body;
-
-//   // Input validation
-//   if (!email || !password) {
-//     return res.status(400).json({
-//       error: "Email and password are required"
-//     });
-//   }
-
-//   // Email format validation
-//   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//   if (!emailRegex.test(email)) {
-//     return res.status(400).json({
-//       error: "Invalid email format"
-//     });
-//   }
-
-//   // Password strength validation
-//   if (password.length < 8) {
-//     return res.status(400).json({
-//       error: "Password must be at least 8 characters long"
-//     });
-//   }
-
-//   try {
-//     // Check if user already exists
-//     const checkResult = await db.query(
-//       "SELECT id FROM users WHERE email = $1",
-//       [email.toLowerCase().trim()]
-//     );
-
-//     if (checkResult.rows.length > 0) {
-//       return res.status(409).json({
-//         error: "Email already exists. Try logging in."
-//       });
-//     }
-
-//     // Hash password before storing
-//     const saltRounds = 10;
-//     const hashedPassword = await bcrypt.hash(password, saltRounds);
-
-//     // Insert new user
-//     const result = await db.query(
-//       "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING id, email",
-//       [email.toLowerCase().trim(), hashedPassword]
-//     );
-
-//     // Generate JWT token for immediate login
-//     const token = jwt.sign(
-//       { userId: result.rows[0].id, email: result.rows[0].email },
-//       process.env.JWT_SECRET,
-//       { expiresIn: '24h' }
-//     );
-
-//     // Return success response
-//     res.status(201).json({
-//       message: "User registered successfully",
-//       user: {
-//         id: result.rows[0].id,
-//         email: result.rows[0].email
-//       },
-//       token
-//     });
-
-//   } catch (err) {
-//     console.error("Registration error:", err);
-//     res.status(500).json({
-//       error: "Internal server error. Please try again later."
-//     });
-//   }
-// });
-
-// Error handling
-// app.use(notFound);
-// app.use(errorHandler);
 
 export default app;

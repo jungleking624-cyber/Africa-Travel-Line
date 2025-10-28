@@ -274,8 +274,8 @@ The AI Travel Agent can help with:
 **Option 1: Via Agentverse Chat**
 
 1. Go to [Agentverse Chat](https://agentverse.ai)
-2. Navigate to "Chat with Agent"
-3. Enter agent address: `agent1qwatl9nznqul3nldvh59lu7ph53fpm4r3y4t5t9ku352d3ur7lkscgzp6vy`
+2. Enter agent address: `agent1qwatl9nznqul3nldvh59lu7ph53fpm4r3y4t5t9ku352d3ur7lkscgzp6vy` or search travel-ai
+3. Navigate to "Chat with Agent"
 4. Start asking your travel questions!
 
 **Option 2: Via Africa Travel Line Platform**
@@ -319,25 +319,25 @@ Each component requires specific environment variables. Copy the example files a
 **Frontend** (`frontend/.env.local`):
 
 ```bash
-NEXT_PUBLIC_API_URL=http://localhost:3001/api
-NEXT_PUBLIC_AGENT_ADDRESS=agent1qwatl9nznqul3nldvh59lu7ph53fpm4r3y4t5t9ku352d3ur7lkscgzp6vy
+PUBLIC_API_URL=http://localhost:5173/
+PUBLIC_AGENT_ADDRESS=agent1qwatl9nznqul3nldvh59lu7ph53fpm4r3y4t5t9ku352d3ur7lkscgzp6vy
 ```
 
 **Backend** (`backend/.env`):
 
 ```bash
-PORT=3001
-DATABASE_URL=mongodb://localhost:27017/africa-travel
+PORT=3000
+DATABASE_URL=db_url
 AGENT_ADDRESS=agent1qwatl9nznqul3nldvh59lu7ph53fpm4r3y4t5t9ku352d3ur7lkscgzp6vy
 JWT_SECRET=your_jwt_secret_here
-CORS_ORIGIN=http://localhost:3000
+CORS_ORIGIN=http://localhost:5000
 ```
 
 **AI Agent** (`travel-agent/.env`):
 
 ```bash
-AGENT_NAME=travel_faq_assistant
-AGENT_SEED=your_unique_secret_seed_phrase_here
+AGENT_NAME=travel_assistant
+AGENT_SEED=your_unique_secret_seed_phrase_
 PORT=8001
 ASI1_API_KEY=your_asi1_api_key_here
 METTA_API_KEY=your_metta_api_key_here
@@ -349,33 +349,33 @@ AGENTVERSE_URL=https://agentverse.ai
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/africa-travel-line.git
+git clone https://github.com/jungleking624-cyber/Africa-Travel-Line.git
 cd africa-travel-line
 ```
 
 #### 2. Setup Frontend
 
 ```bash
-cd frontend
+cd Africa-Travel-line
 npm install
-cp .env.example .env.local
+cp  .env.local
 # Edit .env.local with your configuration
 npm run dev
 ```
 
-The frontend will be available at `http://localhost:3000`
+The frontend will be available at `http://localhost:5173`
 
 #### 3. Setup Backend
 
 ```bash
-cd ../backend
+cd ../server
 npm install
-cp .env.example .env
+cp  .env
 # Edit .env with your configuration
 npm run dev
 ```
 
-The backend API will be available at `http://localhost:3001`
+The backend API will be available at `http://localhost:3000`. The Flask will be available at Port 5000.
 
 #### 4. Setup AI Agent
 
@@ -384,7 +384,7 @@ cd ../travel-agent
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
-cp .env.example .env
+cp  .env
 # Edit .env with your API keys
 python agent.py
 ```
@@ -397,7 +397,7 @@ The agent will start and connect to Agentverse mailbox.
 
 ### Technology Stack
 
-- **Framework:** Next.js 14 (React 18)
+- **Framework:** Typescript (React )
 - **UI Components:** Custom components + Tailwind CSS
 - **State Management:** React Context API / Redux (if applicable)
 - **HTTP Client:** Axios / Fetch API
@@ -407,7 +407,7 @@ The agent will start and connect to Agentverse mailbox.
 ### Key Features
 
 - 🏠 **Home Page** - Showcase featured African destinations
-- 🔍 **Search & Filter** - Find destinations by region, activities, budget
+- 🔍 **Search & Filter** - Find destinations by region, activities, budget (Still in process because of time limit)
 - 📍 **Destination Pages** - Detailed information about each location
 - 💬 **AI Chat Interface** - Interactive travel assistant
 - 👤 **User Profiles** - Save favorites and trip plans
@@ -431,54 +431,35 @@ npm run test         # Run tests
 
 - **Runtime:** Node.js
 - **Framework:** Express.js
-- **Database:** MongoDB (with Mongoose ORM)
+- **Database:** Postgresql (with pgAdmin)
 - **Authentication:** JWT (JSON Web Tokens)
 - **Validation:** Joi / Express Validator
 - **Testing:** Jest + Supertest
-- **Documentation:** Swagger/OpenAPI
 
 ### API Endpoints
 
-#### Destinations
-
-```
-GET    /api/destinations          # List all destinations
-GET    /api/destinations/:id      # Get destination details
-POST   /api/destinations          # Create destination (admin)
-PUT    /api/destinations/:id      # Update destination (admin)
-DELETE /api/destinations/:id      # Delete destination (admin)
-GET    /api/destinations/search   # Search destinations
 ```
 
 #### Users & Authentication
 
 ```
-POST   /api/auth/register         # Register new user
-POST   /api/auth/login            # Login user
-GET    /api/auth/me               # Get current user
-PUT    /api/users/profile         # Update user profile
-GET    /api/users/favorites       # Get user's favorite destinations
-POST   /api/users/favorites/:id   # Add destination to favorites
+
+POST /register # Register new user
+POST /login # Login user
+GET /api/auth/me # Get current user
+GET /profile # User profile
+
 ```
 
 #### AI Agent Integration
 
 ```
-POST   /api/agent/chat            # Send message to AI agent
-GET    /api/agent/status          # Check agent availability
-POST   /api/agent/session/start   # Start chat session
-POST   /api/agent/session/end     # End chat session
-```
 
-#### Travel Plans
-
-```
-GET    /api/trips                 # List user's trips
-POST   /api/trips                 # Create new trip
-GET    /api/trips/:id             # Get trip details
-PUT    /api/trips/:id             # Update trip
-DELETE /api/trips/:id             # Delete trip
-```
+POST /api/chat # Send message to AI agent
+GET /api/health # Check health endpoint
+GET /api/agent-info # Get agent information
+GET /api/sessions/<session_id> # Get session history
+POST /api/chat/session # Start chat session
 
 ### Middleware
 
@@ -589,7 +570,7 @@ PORT=8001
 
 # API Keys (Required)
 ASI1_API_KEY=<your-asi1-key>          # Required for responses
-METTA_API_KEY=<your-metta-key>        # Optional but recommended
+METTA_API_KEY=<your-metta-key>        # METTA do not have api key at this time
 
 # API Endpoints
 ASI1_API_URL=https://api.asi1.ai/v1/chat/completions
@@ -629,21 +610,21 @@ docker run -d --env-file .env travel-agent
 ### Testing the Agent
 
 ```bash
-# Run unit tests
-pytest tests/
+# Run agent
+python agent.py
 
-# Test specific module
-pytest tests/test_services.py
+# Test backend-agent for Frontend integration (In another terminal)
+cd /backend-agent-proxy
+python backend_agent.py
 
-# With coverage
-pytest --cov=. --cov-report=html
 ```
 
 **Manual Testing via Agentverse:**
 
 1. Go to https://agentverse.ai
-2. Click "Chat with Agent"
-3. Enter agent address
+2. Search the agent address "agent1qwatl9nznqul3nldvh59lu7ph53fpm4r3y4t5t9ku352d3ur7lkscgzp6vy" ot travel assistant
+3. Click the agent
+3. Click "Chat with Agent"
 4. Send test messages:
    - "What do I need for Egypt?"
    - "Best time to visit South Africa?"
@@ -780,20 +761,14 @@ pytest --cov=. --cov-report=html
 
 ```bash
 cd frontend
-npm run test              # Run Jest tests
-npm run test:watch        # Watch mode
-npm run test:coverage     # Coverage report
-npm run e2e               # Cypress E2E tests
+npm run dev               # Run frontend app
 ```
 
 ### Backend Testing
 
 ```bash
 cd backend
-npm run test              # Run Jest tests
-npm run test:watch        # Watch mode
-npm run test:coverage     # Coverage report
-npm run test:integration  # Integration tests
+npm run dev               # Run backend app
 ```
 
 ### Agent Testing
@@ -801,7 +776,7 @@ npm run test:integration  # Integration tests
 ```bash
 cd travel-agent
 pytest                    # Run all tests
-pytest tests/test_agent.py     # Specific test file
+pytest tests/test_agent.py # Specific test file
 pytest --cov              # With coverage
 pytest -v                 # Verbose output
 ```
@@ -812,7 +787,7 @@ pytest -v                 # Verbose output
 
 - [ ] Homepage loads correctly
 - [ ] Search functionality works
-- [ ] Destination pages display properly
+- [ ] Destination pages display properly (Limited destinations)
 - [ ] Chat interface connects to agent
 - [ ] Mobile responsive design verified
 - [ ] Forms validate correctly

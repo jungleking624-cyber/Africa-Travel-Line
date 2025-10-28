@@ -1,7 +1,7 @@
 import app from "./app.js";
 import pool from "./config/database.js";
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 // Connect to database
 pool.connect();
