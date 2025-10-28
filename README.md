@@ -279,7 +279,9 @@ The AI Travel Agent can help with:
 4. Start asking your travel questions!
    ![av travel agent](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/av1.png)
 
-![av travel agent2](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/av2.png)
+---
+
+## ![av travel agent2](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/av2.png)
 
 ![av travel agent3](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/av3.png)
 
@@ -310,8 +312,6 @@ content=[TextContent(type="text", text="What vaccinations do I need for Tanzania
 
 **Option 4: Test Agents with ASI:One:**
 ![asi one](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/asi1%20llm.png)
-
-
 
 ---
 
