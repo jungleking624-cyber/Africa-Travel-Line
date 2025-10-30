@@ -315,7 +315,7 @@ if __name__ == '__main__':
     print("🌍 Local Travel FAQ Agent")
     print("="*60)
     print(f"ASI1 API: {'✅ Configured' if ASI1_API_KEY else '❌ Not configured'}")
-    print(f"MeTTa API: {'✅ Configured' if METTA_API_KEY else '❌ Not available'}")
+    print(f"MeTTa API: {'✅ Configured' if METTA_API_KEY else '❌ Not available at the moment'}")
     print(f"\n🌐 Open in browser: http://localhost:5000")
     print(f"📡 API endpoint: http://localhost:5000/api/chat")
     print("="*60 + "\n")

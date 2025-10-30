@@ -283,6 +283,8 @@ The AI Travel Agent can help with:
 
 ## ![av travel agent2](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/av2.png)
 
+---
+
 ![av travel agent3](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/av3.png)
 
 **Option 2: Via Africa Travel Line Platform**
@@ -312,6 +314,18 @@ content=[TextContent(type="text", text="What vaccinations do I need for Tanzania
 
 **Option 4: Test Agents with ASI:One:**
 ![asi one](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/asi1%20llm.png)
+
+**Option 4: Test Africa Travel Line Interface**
+
+1. Go to the "Installation & Setup" section of this README for the instructions on how to setup
+2. Setup the frontend (vite react app)
+3. Setup the Node backend (optional - for user authentication)
+4. Setup the Ai agent (Required - run Flask Backend Api)
+5. Open the running frontend and start interacting with the agent
+
+---
+
+![av travel agent3](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/travel ai UI.png)
 
 ---
 
@@ -386,7 +400,7 @@ cp  .env
 npm run dev
 ```
 
-The backend API will be available at `http://localhost:3000`. The Flask will be available at Port 5000.
+The Node backend API (for user authentication) will be available at `http://localhost:3000`. The Flask (for agent communication) will be available at Port 5000.
 
 #### 4. Setup AI Agent
 
@@ -398,6 +412,9 @@ pip install -r requirements.txt
 cp  .env
 # Edit .env with your API keys
 python agent.py
+# In another terminal (run Flask Backend Api)
+cd ../backend-agent-proxy
+python backend_agent.py
 ```
 
 The agent will start and connect to Agentverse mailbox.
@@ -623,7 +640,7 @@ docker run -d --env-file .env travel-agent
 # Run agent
 python agent.py
 
-# Test backend-agent for Frontend integration (In another terminal)
+# Test agent locally for Frontend integration (In another terminal)
 cd /backend-agent-proxy
 python backend_agent.py
 
