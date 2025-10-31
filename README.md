@@ -325,7 +325,7 @@ content=[TextContent(type="text", text="What vaccinations do I need for Tanzania
 
 ---
 
-![av travel agent3](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/travel ai UI.png)
+![av travel agent3](https://raw.githubusercontent.com/jungleking624-cyber/Africa-Travel-Line/refs/heads/main/travel-agent/images/travel%20ai%20UI.png)
 
 ---
 
