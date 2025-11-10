@@ -1016,7 +1016,7 @@ lsof -ti:3001 | xargs kill -9
 
 ---
 
-## Future Feature
+## Future Features for the agent
 
 1. Booking a ride with a prompt.
 2. Agent being able to choose cheapest ride for the user.
