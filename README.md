@@ -320,7 +320,7 @@ content=[TextContent(type="text", text="What vaccinations do I need for Tanzania
 1. Go to the "Installation & Setup" section of this README for the instructions on how to setup
 2. Setup the frontend (vite react app)
 3. Setup the Node backend (optional - for user authentication)
-4. Setup the Ai agent (Required - run Flask Backend Api)
+4. Setup the Ai agent (Required - run Flask Backend API)
 5. Open the running frontend and start interacting with the agent
 
 ---
@@ -1013,6 +1013,15 @@ lsof -ti:3001 | xargs kill -9
 ⚠️ **Insurance Required:** We strongly recommend comprehensive travel insurance.
 
 ⚠️ **AI Limitations:** AI responses are informative but may not cover every scenario. Use as a guide, not definitive source.
+
+---
+
+## Future Feature
+
+1. Booking a ride with a prompt.
+2. Agent being able to choose cheapest ride for the user.
+3. Agent being able to manage state and know when a user is logged in.
+4. Agent being able to learn and know the user favourite or usual location.
 
 ---
 
